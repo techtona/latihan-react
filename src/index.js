@@ -69,7 +69,38 @@ ReactDOM.render(element,document.getElementById('root'));
 */
 
 // const element = <Product judul="Koleksi Avengers menggunakan Class Component dlm file sendiri" harga="100.000"/>
-const element = <App/>;
+//
+// const element = <GoogleMap
+//     defaultZoom={8}
+//     defaultCenter={{lat: -34.397, lng: 150.644}}
+// >
+// </GoogleMap>;
+
+
+import {
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    Marker,
+} from "react-google-maps";
+
+const MapWithAMarker = withScriptjs(withGoogleMap(props =>
+    <GoogleMap
+        defaultZoom={8}
+        defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    >
+        <Marker
+            position={{ lat: -34.397, lng: 150.644 }}
+        />
+    </GoogleMap>
+));
+
+var element = <MapWithAMarker
+    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCIWY8PfPidEitFLloWMSv20DPx-4Ayow&v=3.exp&libraries=geometry,drawing,places"
+    loadingElement={<div style={{ height: `100%` }} />}
+    containerElement={<div style={{ height: `400px` }} />}
+    mapElement={<div style={{ height: `100%` }} />}
+/>
 
 ReactDOM.render(element,document.getElementById('root'));
 

@@ -12,21 +12,21 @@ class App extends Component {
                 harga: '10.0000',
                 id: 100
 
-            },{
+            }, {
                 judul: 'Lorem Ipsum',
                 harga: '10.0000',
                 id: 50
 
             }],
-            delete_clicked : 0
+            delete_clicked: 0
         };
     }
 
     hapusCard = (key) => {
         this.state.delete_clicked = !this.state.delete_clicked;
-        this.setState({delete_clicked : this.state.delete_clicked});
-        this.state.products.splice(key.target.id,1);
-        this.setState({products : this.state.products});
+        this.setState({delete_clicked: this.state.delete_clicked});
+        this.state.products.splice(key.target.id, 1);
+        this.setState({products: this.state.products});
     }
 
     // componentDidMount() {
@@ -60,6 +60,7 @@ class App extends Component {
 
         this.refs.form.reset();
     }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
 
     }
@@ -67,44 +68,44 @@ class App extends Component {
     render() {
         return (
             <div className="row">
-                <div className="col l4">
-                    <form ref="form" onSubmit={this.handleSubmit}>
-                        <input type="text" ref="id" placeholder="ID Produk"/>
-                        <input type="text" ref="nama" placeholder="Nama Produk"/>
-                        <input type="text" ref="harga" placeholder="Harga"/>
-                        <button type="submit" className="btn waves-effect">Simpan</button>
-                    </form>
-                </div>
-                <div className="col l8">
-                    {/*<table>*/}
-                    {/*<thead>*/}
-                    {/*<tr>*/}
-                    {/*<th>Nama Produk</th>*/}
-                    {/*<th>Harga</th>*/}
-                    {/*<th>Pilihan</th>*/}
-                    {/*</tr>*/}
-                    {/*</thead>*/}
-                    {/*<tbody>*/}
-                    {/*{this.state.products.map((data, key) => {*/}
-                    {/*return (*/}
-                    {/*<tr key={data.id}>*/}
-                    {/*<td>{data.judul}</td>*/}
-                    {/*<td>{data.harga}</td>*/}
-                    {/*<td>*/}
-                    {/*<button onClick={()=>this.hapusBaris(key)} className="waves-effect waves-teal btn-small red">Hapus</button>*/}
-                    {/*</td>*/}
-                    {/*</tr>*/}
-                    {/*)*/}
-                    {/*})}*/}
-                    {/*</tbody>*/}
-                    {/*</table>*/}
-                    {this.state.products.map((data, key) => {
-                        return (
-                            <Product deleteCard={this.hapusCard} harga={data.harga} judul={data.judul} key={key} id={key}/>
-                        )
-                    })}
-                </div>
-
+                {/*<div className="col l4">*/}
+                {/*    <form ref="form" onSubmit={this.handleSubmit}>*/}
+                {/*        <input type="text" ref="id" placeholder="ID Produk"/>*/}
+                {/*        <input type="text" ref="nama" placeholder="Nama Produk"/>*/}
+                {/*        <input type="text" ref="harga" placeholder="Harga"/>*/}
+                {/*        <button type="submit" className="btn waves-effect">Simpan</button>*/}
+                {/*    </form>*/}
+                {/*</div>*/}
+                {/*<div className="col l8">*/}
+                {/*    /!*<table>*!/*/}
+                {/*    /!*<thead>*!/*/}
+                {/*    /!*<tr>*!/*/}
+                {/*    /!*<th>Nama Produk</th>*!/*/}
+                {/*    /!*<th>Harga</th>*!/*/}
+                {/*    /!*<th>Pilihan</th>*!/*/}
+                {/*    /!*</tr>*!/*/}
+                {/*    /!*</thead>*!/*/}
+                {/*    /!*<tbody>*!/*/}
+                {/*    /!*{this.state.products.map((data, key) => {*!/*/}
+                {/*    /!*return (*!/*/}
+                {/*    /!*<tr key={data.id}>*!/*/}
+                {/*    /!*<td>{data.judul}</td>*!/*/}
+                {/*    /!*<td>{data.harga}</td>*!/*/}
+                {/*    /!*<td>*!/*/}
+                {/*    /!*<button onClick={()=>this.hapusBaris(key)} className="waves-effect waves-teal btn-small red">Hapus</button>*!/*/}
+                {/*    /!*</td>*!/*/}
+                {/*    /!*</tr>*!/*/}
+                {/*    /!*)*!/*/}
+                {/*    /!*})}*!/*/}
+                {/*    /!*</tbody>*!/*/}
+                {/*    /!*</table>*!/*/}
+                {/*    {this.state.products.map((data, key) => {*/}
+                {/*        return (*/}
+                {/*            <Product deleteCard={this.hapusCard} harga={data.harga} judul={data.judul} key={key}*/}
+                {/*                     id={key}/>*/}
+                {/*        )*/}
+                {/*    })}*/}
+                {/*</div>*/}
             </div>
         );
     }
