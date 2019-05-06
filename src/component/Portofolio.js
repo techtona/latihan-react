@@ -10,7 +10,16 @@ class Portofolio extends Component {
     }
 
     componentDidMount() {
-
+        fetch('http://my-json-server.typicode.com/techtona/product_api/product')
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({
+                    products : data
+                })
+            })
+            .catch((m) => {
+                console.log("Error : "+m);
+            })
     }
 
     render() {
