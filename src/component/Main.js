@@ -3,14 +3,19 @@ import {Switch, Route} from 'react-router-dom';
 
 import Profile from './Profile';
 import Kontak from './Kontak';
+import Home from './Home';
 import Portofolio from './Portofolio';
 
 class Main extends Component {
     render() {
         return (
-            <div>
-                <h1>halaman Utama</h1>
-            </div>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route path="/home" component={Home}/>
+                <Route path="/kontak" component={Kontak}/>
+                <Route path="/profile" component={Profile}/>
+                <Route path="/portofolio" component={Portofolio}/>
+            </Switch>
         );
     }
 }
